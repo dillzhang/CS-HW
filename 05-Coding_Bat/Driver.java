@@ -23,5 +23,33 @@ public class Driver {
 	System.out.println("diff21(21) == " + s.diff21(21));
 	System.out.println("diff21(42) == " + s.diff21(42));
 	System.out.println();
+
+	//Tests nearHundred()
+	System.out.println("Testing nearHundred()");
+	System.out.println("neadHundred(90) == " + s.nearHundred(90));
+      	System.out.println("neadHundred(110) == " + s.nearHundred(110));
+	System.out.println("neadHundred(190) == " + s.nearHundred(190));
+	System.out.println();
+
+	//Tests mixStart()
+	System.out.println("Testing mixStart()");
+	System.out.println("mixStart('Hix') == " + s.mixStart("Hix"));
+	System.out.println("mixStart('mit') == " + s.mixStart("mit"));
+	System.out.println("mixStart('mixture') == " + s.mixStart("mixture"));
+	System.out.println();
+
+	//Tests teaParty()
+	System.out.println("Testing teaParty()");
+	System.out.println("teaParty(1,2) == " + s.teaParty(1,2));
+	System.out.println("teaParty(5,6) == " + s.teaParty(5,6));
+	System.out.println("teaParty(50,6) == " + s.teaParty(50,6));
+	System.out.println();
+
+	//Tests lastDigit()
+	System.out.println("Testing lastDigit()");
+	System.out.println("lastDigit(12,13,14) == " + s.lastDigit(12,13,14));
+	System.out.println("lastDigit(12,22,32) == " + s.lastDigit(12,22,32));
+	System.out.println("lastDigit(43,25,33) == " + s.lastDigit(43,25,33));
+	System.out.println();
     }
 }
