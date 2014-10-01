@@ -10,9 +10,11 @@ public class Driver {
 	//Prints out tr11(h) Functions
 	System.out.println(s.tri1(4));
 	System.out.println(s.tri1(6));
+	System.out.println(s.tri1(1));
 
 	//Prints out tri2(h) Functions
 	System.out.println(s.tri2(4));
 	System.out.println(s.tri2(6));
+	System.out.println(s.tri2(1));
     }
 }

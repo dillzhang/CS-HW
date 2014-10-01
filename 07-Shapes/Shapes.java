@@ -18,7 +18,7 @@ public class Shapes {
 	return s;
     }
 
-    //tri1 Function
+    //tri1 Function (2 Minutes to Type, 3 more to comment and format)
     public String tri1(int h) {
 	String returner = ""; //Intializes a return variable as a string
 	
@@ -42,7 +42,7 @@ public class Shapes {
 
 
 
-    //tri2 Function
+    //tri2 Function (2 minutes to type and 3 more to comment and format)
     public String tri2(int h) {
 	String returner = ""; //Intializes a return variable as a string
 	
