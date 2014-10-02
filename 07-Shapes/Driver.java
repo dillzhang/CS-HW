@@ -27,5 +27,9 @@ public class Driver {
 	System.out.println(s.diamond(11));
 	System.out.println(s.diamond(1));
 
+	//Prints out tri4(h) Functions
+	System.out.println(s.tri4(4));
+	System.out.println(s.tri4(6));
+	System.out.println(s.tri4(1));
     }
 }

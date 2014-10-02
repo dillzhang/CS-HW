@@ -56,7 +56,7 @@ public class Shapes {
 	    
 	    //While loop to place spaces in front of the stars (Places the difference between the number row number and the total height = Number of spots without stars)
 	    while (rc < h - hc) {
-		returner += " "; //Adds a space (Repeatedly through the loop)
+            returner += " "; //Adds a space (Repeatedly through the loop)
 		rc += 1; //Incraments the counter
 	    }
 
@@ -75,43 +75,51 @@ public class Shapes {
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    //tri3 Function (2 minutes to type and 3 more to comment and format)
     public String tri3(int h) {
-	String returner = "";
+	String returner = ""; //Intializes a return variable as a string
 
-	int hc = 1;
-	
-	while (hc <= h) {
-	    int rc = 0;
-	    String stars = "";
+	//For loop to go through each row of triangle
+	//hc denotes the row number but also used for the number of stars
+	//hc is incremented by 1, until it equals the height of the desired triangle
+	for(int hc = 1; hc <= h; hc++) {
 	    
+	    int rc = 0; //Initializes a counter for the indices of our spaces and stars
+	    String stars = ""; //Initializes a string to store our stars for this layer
+	    
+	    //While loop that adds the spaces to our return string, Adds the difference of the total height and the row number
 	    while(rc < h - hc) {
-		returner += " ";
-		rc += 1;
+		returner += " "; //Adding the spaces to the return string
+		rc += 1; //Increments our counter
 	    }
 	    
+	    //While loop that adds stars to our string that stores them. Adds enough stars so stars from the left to the middle column of stars, not including the middle
 	    while (rc < h - 1) {
-		stars += "*";
-		rc += 1;
+		stars += "*"; //Adding the stars onto the storing string
+		rc += 1; //Incrementing our counter
 	    }
 	    
+	    //Adds our strings onto our return string
+	    //First the stars stored in our string, a single star, then the same stored string again, and the break. Remember the preceeding spaces have already been added.
+	    //This construct puts the stars on the left hand side of the middle column, the middle column, and then the right hand side
 	    returner += stars + "*" + stars + "\n";
-	    hc += 1;
 	}
 	
-	return returner;
+	return returner; //Returns the return string that was constructed
     }
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    //diamond Function (3 minutes to type and 3 more to comment and format)
     public String diamond(int h) {
 	
-	int top = h - h/2;
-	int bottom = h/2;
+	int top = h - h/2; //Splits height into a top and bottom
+	int bottom = h/2; //Top is rounded up if needed and bottom is rounded down
 
-	String returner = tri3(top);
+	String returner = tri3(top); //Initializes a return string preset with the top of our diamond using the tri3(h) with the top value
 	
-	int hc = bottom;
-	while (hc >= 1) {
+	//Using a for loop to construct the bottom of our pyramid
+	for (int hc = bottom; hc >= 1; hc--) {
 	    int rc = 0;
 	    String stars = "";
 	    
@@ -130,10 +138,38 @@ public class Shapes {
 	    }
 
 	    returner += stars + "*" + stars + "\n";
-	    hc -= 1;
 	}
 
 	return returner;
     }
 
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public String tri4(int h) {
+	
+	String returner = "";
+	
+	for(int hc=h; hc > 0; hc--) {
+	    
+	    int rc = 0;
+
+	    while (rc<h-hc){
+		returner += " ";
+		rc += 1;
+	    }
+	    
+	    while (rc < h){
+		returner += "*";
+		rc += 1;
+	    }
+	    
+	    returner += "\n";
+	}
+	
+	return returner;
+    }
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 }
+	   
