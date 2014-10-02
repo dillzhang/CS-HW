@@ -16,5 +16,16 @@ public class Driver {
 	System.out.println(s.tri2(4));
 	System.out.println(s.tri2(6));
 	System.out.println(s.tri2(1));
+    
+	//Prints out tri3(h) Functions
+	System.out.println(s.tri3(4));
+	System.out.println(s.tri3(6));
+	System.out.println(s.tri3(1));
+
+	//Prints out diamond(h) Functions
+	System.out.println(s.diamond(4));
+	System.out.println(s.diamond(11));
+	System.out.println(s.diamond(1));
+
     }
 }

@@ -18,6 +18,8 @@ public class Shapes {
 	return s;
     }
 
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     //tri1 Function (2 Minutes to Type, 3 more to comment and format)
     public String tri1(int h) {
 	String returner = ""; //Intializes a return variable as a string
@@ -40,7 +42,7 @@ public class Shapes {
 	return returner; //Returns the return string that was constructed
     }
 
-
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     //tri2 Function (2 minutes to type and 3 more to comment and format)
     public String tri2(int h) {
@@ -70,4 +72,68 @@ public class Shapes {
 
 	return returner; //Returns the return string that was constructed
     }
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public String tri3(int h) {
+	String returner = "";
+
+	int hc = 1;
+	
+	while (hc <= h) {
+	    int rc = 0;
+	    String stars = "";
+	    
+	    while(rc < h - hc) {
+		returner += " ";
+		rc += 1;
+	    }
+	    
+	    while (rc < h - 1) {
+		stars += "*";
+		rc += 1;
+	    }
+	    
+	    returner += stars + "*" + stars + "\n";
+	    hc += 1;
+	}
+	
+	return returner;
+    }
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public String diamond(int h) {
+	
+	int top = h - h/2;
+	int bottom = h/2;
+
+	String returner = tri3(top);
+	
+	int hc = bottom;
+	while (hc >= 1) {
+	    int rc = 0;
+	    String stars = "";
+	    
+	    while (rc < bottom - hc) {
+		returner += " ";
+		rc += 1;
+	    }
+	    
+	    while (rc < bottom - 1) {
+		stars += "*";
+		rc += 1;
+	    }
+	
+	    if (top != bottom) {
+		returner += " ";
+	    }
+
+	    returner += stars + "*" + stars + "\n";
+	    hc -= 1;
+	}
+
+	return returner;
+    }
+
 }
