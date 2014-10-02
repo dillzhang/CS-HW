@@ -119,54 +119,67 @@ public class Shapes {
 	String returner = tri3(top); //Initializes a return string preset with the top of our diamond using the tri3(h) with the top value
 	
 	//Using a for loop to construct the bottom of our pyramid
+    //hc denotes not only the height but also the number of stars required
+    //hc starts at the height given and increments downward to get the reverse pyramid
 	for (int hc = bottom; hc >= 1; hc--) {
-	    int rc = 0;
-	    String stars = "";
 	    
+        int rc = 0; //Initializes our counter for the stars and spaces
+	    String stars = ""; //Initializes a string to store stars, similar to the method used in tri3(h)
+	    
+        //While loop to add the spaces, adds the diffence of the row and the height of the bottom half) number of spaces
 	    while (rc < bottom - hc) {
-		returner += " ";
-		rc += 1;
+		returner += " "; //Adding the spaces
+		rc += 1; //Incrementing the counter
 	    }
 	    
+        //While loop to add the stars before the middle column into our store string
 	    while (rc < bottom - 1) {
-		stars += "*";
-		rc += 1;
+		stars += "*"; //Adds the stars to the string
+		rc += 1; //Increments the counter
 	    }
 	
+        //If the number is even, bottom and top pyramids bases have to align, but if the height is odd, the bottom base is smaller than the top base
+        //Therefore, we have to shift the whole bottom base over 1, basically adding a space to each line
 	    if (top != bottom) {
-		returner += " ";
+		returner += " "; //Adding said space to the line if the height inputed was odd
 	    }
 
-	    returner += stars + "*" + stars + "\n";
+	    returner += stars + "*" + stars + "\n"; //Adds the stars before the middle column, a star for the middle column, the stars for the right hand side, and the line break
 	}
 
-	return returner;
+	return returner; //Returns the return string that was constructed
     }
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    //tri4 Function (2 minutes to type and 3 more minutes to comment and format)
     public String tri4(int h) {
 	
-	String returner = "";
+	String returner = ""; //Initiates a variable to store our return string
 	
+    //For loop to increment through the rows of the triangle
+    //hc is used to denote the height but also the number of stars for the row
+    //hc is incremented downwards and starts at the max height of the triangle
 	for(int hc=h; hc > 0; hc--) {
 	    
-	    int rc = 0;
+	    int rc = 0; //Initiates a counters to places stars and spaces
 
+        //While loop to places spaces before the line of stars
 	    while (rc<h-hc){
-		returner += " ";
-		rc += 1;
+		returner += " "; //Adds the difference between the max height and the row number (number of stars) number of spaces
+		rc += 1; //Increments the counter
 	    }
 	    
+        //While loop to add on the remaining stars to the spaces in the row
 	    while (rc < h){
-		returner += "*";
-		rc += 1;
+		returner += "*"; //Adding the stars on
+		rc += 1; //Incrementing a counter
 	    }
 	    
-	    returner += "\n";
+	    returner += "\n"; //Adding the line break to move onto the next line
 	}
 	
-	return returner;
+	return returner; //Returns the return string that was constructed
     }
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
