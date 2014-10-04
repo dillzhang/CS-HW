@@ -3,7 +3,7 @@ public class Driver {
 	
 	//Intializes a new class variable
 	Bats b = new Bats();
-
+	
 	//Test for stringSplosion
 	System.out.println("stringSplosion('code')");
 	System.out.println(b.stringSplosion("code"));
@@ -14,15 +14,15 @@ public class Driver {
 	System.out.println("stringSplosion('xyz')");
 	System.out.println(b.stringSplosion("xyz"));
         
-    //Test for stringX
-    System.out.println("stringx('texting')");
-    System.out.println(b.stringX("texting"));
-    System.out.println("stringx('xhellox')");
-    System.out.println(b.stringX("xhellox"));
-    System.out.println("stringx('xxhelloxworldxx')");
-    System.out.println(b.stringX("xxhelloxworldxx"));
-    System.out.println("stringx('abcxyz')");
-    System.out.println(b.stringX("abcxyz"));
+	//Test for stringX
+	System.out.println("stringx('texting')");
+	System.out.println(b.stringX("texting"));
+	System.out.println("stringx('xhellox')");
+	System.out.println(b.stringX("xhellox"));
+	System.out.println("stringx('xxhelloxworldxx')");
+	System.out.println(b.stringX("xxhelloxworldxx"));
+	System.out.println("stringx('abcxyz')");
+	System.out.println(b.stringX("abcxyz"));
     
     }
 }
