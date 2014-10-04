@@ -183,6 +183,31 @@ public class Shapes {
     }
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    
+    //frame Function (6 minutes to type and 3 minutes to comment and formart)
+    public String frame(int r, int c) {
+        
+        String returner = ""; //Initializes a return string
+        
+        //For to increment a counter to move from row to row in order to perform actions
+        //The loop starts at 1 and moves to r, instead of 0, in order to make the final row easier to dectect
+        for(int a=1; a<=r; a++) {
+            
+            //For to increment a counter to move from index to index with a row to add a star or space
+            //The loops starts at 1 and moves to c, instead of 0, in order to make the far edge easier to dectect
+            for(int b=1; b<=c; b++) {
+                
+                //If the (a,b) coordinate happens to be on the frame, a star is added
+                //Else a space is added instead
+                if (a == 1 || a == r || b == 1 || b == c) {
+                    returner += "*";
+                } else {
+                    returner += " ";
+                }
+            }
+            returner += "\n"; //adds a line break after the row has been constructed
+        }
+        return returner; //Returns the return string that was constructed
+    }
 }
 	   

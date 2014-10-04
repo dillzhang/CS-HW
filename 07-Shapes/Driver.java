@@ -37,5 +37,26 @@ public class Driver {
 	System.out.println(s.tri4(4));
 	System.out.println(s.tri4(6));
 	System.out.println(s.tri4(1));
+        
+    //Prints out frame(r,c) Functions
+        System.out.println("frame(r,c) Test");
+        System.out.println("frame(0,0)");
+        System.out.println(s.frame(0,0));
+        System.out.println("frame(1,0)");
+        System.out.println(s.frame(1,0));
+        System.out.println("frame(0,1)");
+        System.out.println(s.frame(0,1));
+        System.out.println("frame(1,1)");
+        System.out.println(s.frame(1,1));
+        System.out.println("frame(1,2)");
+        System.out.println(s.frame(1,2));
+        System.out.println("frame(2,1)");
+        System.out.println(s.frame(2,1));
+        System.out.println("frame(2,2)");
+        System.out.println(s.frame(2,2));
+        System.out.println("frame(4,5)");
+        System.out.println(s.frame(4,5));
+        System.out.println("frame(5,4)");
+        System.out.println(s.frame(5,4));
     }
 }
