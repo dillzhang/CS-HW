@@ -1,0 +1,3 @@
+[submodule "12-stuyablo"]
+	path = 12-stuyablo
+	url = git@github.com:jbaum98/stuyablo

@@ -1,0 +1,44 @@
+public class Codes {
+    //Fronttimes (2 Minutes)
+    public String frontTimes(String str, int n) {
+	String returner = "";
+	int a = 0;
+	if (str.length() <= 3) {
+	    while (a<n) {
+		returner += str;
+		a += 1;
+	    }
+	} else {
+	    while (a<n) {
+		returner += str.substring(0,3);
+		a += 1;
+	    }
+	}
+	return returner;
+    }
+
+    //StringBits (2 Minutes)
+    public String stringBits(String str) {
+	String returner = "";
+	int a = 0;
+	while (a < str.length()) {
+	    returner += str.charAt(a);
+	    a+=2;
+	}
+	return returner;
+    }
+
+    //stringYak (4 Minutes)
+    public String stringYak(String str) {
+	String returner = "";
+	int a = 0;
+	while (a < str.length()) {
+	    if (a + 2 < str.length() && str.charAt(a) == 'y' && str.charAt(a+2) == 'k') {
+		a += 3;
+	    } else {
+		returner += str.charAt(a);
+		a += 1;
+	    }
+	}
+	return returner; 
+    }

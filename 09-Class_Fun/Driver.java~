@@ -1,0 +1,22 @@
+public class Driver {
+    public static void main(String[] args){
+	
+	Basechar b1,b2;
+	Warrior w1,w2;
+	Mage m1,m2;
+	
+	b1 = new Basechar();
+	w1 = new Warrior();
+	m1 = new Mage();
+	
+	//m2 = m1; //Same classes can be assigned to each other
+	//m2 = b1; Incompatible types -- Subclasses cannot be assigned to superclasses
+	//m2 = w1; Different subclasses, or just classes in general, cannot be assigned to each other
+	
+	//b2 = m1; //Superclasses can be assigned to a subclass
+	//b2 = m2; //Superclasses have to be assigned to subclasses that have been assigned to a class
+	b2 = new Warrior();	
+	
+	System.out.println(b2);
+    }
+}
