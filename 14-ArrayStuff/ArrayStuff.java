@@ -43,6 +43,19 @@ public class ArrayStuff {
 	return maxer;
     }
 
+    public int freq(int i) {
+	int counter = 0;
+	int desiredval = a[i];
+
+	for(int z = 0; z < a.length; z++) {
+	    if (a[z] == desiredval) {
+		counter += 1;
+	    }
+	}
+
+	return counter;
+    }
+
     public int length() {
 	return a.length;
     }
