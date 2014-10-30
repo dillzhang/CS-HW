@@ -106,4 +106,34 @@ public class CodingArray {
   
 	return series;
     }
+
+    public int maxMirror(int[] nums) {
+	int[] rev = new int[nums.length];
+	int current = 0;
+	int maxer = 0;
+  
+	for(int i = 0; i<nums.length; i++) {
+	    rev[i] = nums[nums.length - (i + 1)];
+	}
+  
+	for(int a = 0; a<nums.length; a++) {
+	    for(int b = 0; (a+current)<nums.length && b<rev.length; b++) {
+		if(nums[a+current] == rev[b]) {
+		    current += 1;
+		} else if (current > maxer) {
+		    maxer = current;
+		    current = 0;
+		} else {
+		    current = 0;
+		}
+	    }
+    
+	    if (current > maxer) {
+		maxer = current;
+	    }
+	}
+  
+	return maxer;    
+    }
+
 }
