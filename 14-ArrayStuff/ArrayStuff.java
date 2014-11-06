@@ -2,10 +2,9 @@ import java.util.*;
 
 public class ArrayStuff {
     int[] a;
-    Random r;
+    Random r = new Random();
 
     public ArrayStuff(int n) {
-	r = new Random();
 	a = new int[n];
 
 	for(int i = 0; i<a.length; i++) {
@@ -15,6 +14,16 @@ public class ArrayStuff {
 
     public ArrayStuff() {
 	this(100);
+    }
+
+    public ArrayStuff(int size, int min, int max) {
+	a = new int[size];
+	
+	for(int i = 0; i<a.length; i++) {
+	    a[i] = r.nextInt(max - min) + min;
+	}
+
+	System.out.println(Arrays.toString(a));
     }
 
     public String toString() {
@@ -72,5 +81,19 @@ public class ArrayStuff {
         return most;
     }
 
+    public int fastMode(){
+	int[] buckets = new int[maxVal()+1];
+	for (int i = 0; i<a.length; i++) {
+	    buckets[a[i]] += 1;
+	}
+
+	int moder = 0;
+	for (int x = 1; x<a.length; x++) {
+	    if (a[x] > a[moder]) {
+		moder = x;
+	    }
+	}
+	return moder;
+    }
 
 }
