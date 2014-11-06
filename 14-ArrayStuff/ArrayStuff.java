@@ -59,5 +59,18 @@ public class ArrayStuff {
     public int length() {
 	return a.length;
     }
+    
+    public int mode(){
+        int most = a[0];
+        int count = freq(0);
+        for (int alpha = 1; alpha<a.length; alpha++) {
+            if (freq(a[alpha]) > count) {
+                most = a[alpha];
+                count = freq(alpha);
+            }
+        }
+        return most;
+    }
+
 
 }
