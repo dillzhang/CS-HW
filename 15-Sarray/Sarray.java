@@ -1,6 +1,8 @@
 public class Sarray {
     int[] data;
     int   last;
+    int  chunk;
+
     /*
     public Sarray(int size, int[] seeds) {
 	data = new int[size];
@@ -27,11 +29,12 @@ public class Sarray {
         // set up the initial instance variables
 	data = new int[1];
 	last = 0;
+	chunk = 100;
 	//Sarray(1,[0]);
     }
 
     private void grow() {
-	int[] buffer = new int[data.length+1];
+	int[] buffer = new int[data.length+chunk];
 	for (int counter = 0; counter < data.length; counter++) {
 	    buffer[counter] = data[counter];
 	}
@@ -79,7 +82,7 @@ public class Sarray {
 	if (index < last && index >= 0) {
 	    return data[index];
 	} else {
-	    return -1;
+	    throw new IndexOutOfBoundsException();
 	}
     }
 
@@ -91,7 +94,7 @@ public class Sarray {
 	    data[index] = i;
 	    return buffer;
 	} else {
-	    return -1;
+	    throw new IndexOutOfBoundsException();
 	}
     }
 
@@ -110,7 +113,7 @@ public class Sarray {
 	    }
 	    return buffer;
 	} else {
-	    return -1;
+	    throw new IndexOutOfBoundsException();
 	}
     }
 }

@@ -29,5 +29,13 @@ public class Driver {
 	System.out.println();
 	System.out.println("Removing index 4: " + alpha.remove(4));
 	System.out.println("After Removal: " + Arrays.toString(alpha.data));
+
+	System.out.println("Error Testing");
+	try {
+	    System.out.println(alpha.get(100));
+	} catch (IndexOutOfBoundsException e) {
+	    System.out.println("Failed: " + e);
+	}
+
     }
 }
