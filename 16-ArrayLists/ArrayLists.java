@@ -21,6 +21,7 @@ public class ArrayLists {
 	for (int j = 1; j < intlist.size(); j++) {
 	    if (intlist.get(j) == intlist.get(j-1)) {
 		intlist.remove(j);
+		j--;
 	    }
 	}
     }
