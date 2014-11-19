@@ -49,6 +49,13 @@ public class WordSearch {
     //===========================================================================================================================================================================
 
     //METHODS
+    
+    //addWord( desired word, starting row, starting column, desired directon ) 
+    //--> Direction calculations are stored in the private array direction
+    //--> --> 0 - Right Horizontal, each one after is a 45 degree counterclockwise, till 7 - Right Downward
+    //first runs through to check if the word can be legally added to the selected location at the selected orientation
+    //second run through to place the word in the desired location after scouting of location reveals no problem
+    //if error presents itself, code terminates and prints "Word does not fit location"
     public void addWord(String w, int row, int col, int d){
 	String tester = w;
 	int r = row;
