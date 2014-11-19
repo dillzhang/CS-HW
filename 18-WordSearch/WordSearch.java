@@ -1,16 +1,24 @@
 public class WordSearch {
+    
+    //===========================================================================================================================================================================
+    
+    //INSTANCE VARIABLES
     private char[][] board;
-    private int[][] directions = {
-	{0,1},   //Horizontal Right
-	{0,-1},  //Horizontal Left
-	{1,0},   //Vertical Up
-	{-1,0},  //Vertical Down
-	{1,1},   //Up Right
-	{1,-1},  //Up Left
-	{-1,-1}, //Down Left
-	{-1,1}   //Down Right
+
+    private int[][] directions = { //Used in word placement direction
+	{0,1},   // 0 Horizontal Right
+	{1,1},   // 1 Up Right
+	{1,0},   // 2 Vertical Up
+	{1,-1},  // 3 Up Left
+	{0,-1},  // 4 Horizontal Left
+	{-1,-1}, // 5 Down Left
+	{-1,0},  // 6 Vertical Down
+	{-1,1}   // 7 Down Right
     };
     
+    //===========================================================================================================================================================================
+
+    //CONSTRUCTORS
     public WordSearch(int r, int c){
 	board = new char[r][c];
 	for (int i = 0; i < board.length; i++) {
@@ -21,9 +29,12 @@ public class WordSearch {
     }
     
     public WordSearch() {
-	this(30,30);
+	this(20,40);
     }
     
+    //===========================================================================================================================================================================
+
+    //TOSTRING
     public String toString(){
 	String s = "";
 	for (int i = 0; i < board.length; i++) {
@@ -35,29 +46,46 @@ public class WordSearch {
 	return s;
     }
     
+    //===========================================================================================================================================================================
+
+    //METHODS
     public void addWord(String w, int row, int col, int d){
 	String tester = w;
+	int r = row;
+	int c = col;
+	for (int i = 0; i<w.length(); i++) {
+	    if (r>=0 && r<board[0].length && c>=0 && c<board.length && (board[r][c] == tester.charAt(i) || board[r][c] =='.')) {
+		r += directions[d][0];
+		c += directions[d][1];
+	    } else {
+		System.out.println("Word does not fit location");
+		System.exit(0);
+	    }
+	}
+	
 	r = row;
 	c = col;
-	for (int i = 0; i<w.length() && r>=0 && r<board[0].length && c>=0 && c<board.length; i++) {
-	    if (board[r][c] == tester.charAt(i) || board[r][c] =='.') {
-		
+	
+	for (int i = 0; i<w.length(); i++) {
+	    board[r][c] = w.charAt(i);
 	    r += directions[d][0];
 	    c += directions[d][1];
 	}
     }
-    
-    public static void main(String[] args) {
-	WordSearch w = new WordSearch();
-	System.out.println(w);
-            /*
-	      w.addWordH("hello",3,15); // should work
-	      w.addWordH("look",3,14); // test illegal overlap
-	      //w.addWordH("look",3,18); // test legal overlap
-	      //w.addWordH("look",-3,20); // test illegal row
-	      //w.addWordH("look",3,55); // test illegal col
-	      // etc
-	      */
-	System.out.println(w);
+
+    //===========================================================================================================================================================================
+
+    //MAIN METHOD
+	public static void main(String[] args) {
+	    WordSearch w = new WordSearch();
+	    System.out.println(w);
+	    w.addWord("hello",3,15,0); // should work
+	    System.out.println(w);
+	    //w.addWord("look",3,14,0); // test illegal overlap
+	    //w.addWord("look",3,18,0); // test legal overlap
+	    //w.addWord("look",-3,20,0); // test illegal row
+	    //w.addWord("look",3,55,0); // test illegal col
+	    w.addWord("look",3,18,2); //test vertical placement
+	    System.out.println(w);
     }
 }
