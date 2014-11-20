@@ -83,16 +83,16 @@ public class WordSearch {
     //===========================================================================================================================================================================
 
     //MAIN METHOD
-	public static void main(String[] args) {
-	    WordSearch w = new WordSearch();
-	    System.out.println(w);
-	    w.addWord("hello",3,15,0); // should work
-	    System.out.println(w);
-	    //w.addWord("look",3,14,0); // test illegal overlap
-	    //w.addWord("look",3,18,0); // test legal overlap
-	    //w.addWord("look",-3,20,0); // test illegal row
-	    //w.addWord("look",3,55,0); // test illegal col
-	    w.addWord("look",3,18,2); //test vertical placement
-	    System.out.println(w);
+    public static void main(String[] args) {
+	WordSearch w = new WordSearch();
+	System.out.println(w);
+	w.addWord("hello",3,15,0); // should work
+	System.out.println(w);
+	//w.addWord("look",3,14,0); // test illegal overlap
+	//w.addWord("look",3,18,0); // test legal overlap
+	//w.addWord("look",-3,20,0); // test illegal row
+	//w.addWord("look",3,55,0); // test illegal col
+	w.addWord("look",3,18,2); //test vertical placement
+	System.out.println(w);
     }
 }
