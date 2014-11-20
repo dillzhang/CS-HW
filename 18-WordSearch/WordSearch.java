@@ -93,6 +93,7 @@ public class WordSearch {
 	//w.addWord("look",-3,20,0); // test illegal row
 	//w.addWord("look",3,55,0); // test illegal col
 	w.addWord("look",3,18,2); //test vertical placement
+	w.addWord("alphabet",4,19,2);//testing vertical placement
 	System.out.println(w);
     }
 }
