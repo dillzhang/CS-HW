@@ -82,19 +82,21 @@ public class WordSearch {
 	}
     }
 
-    public void addWord(String w){
-	boolean failure = true;
+    public boolean addWord(String w){
+	int failures = 0;
 	
-	while (failure) {
+	while (failures < 1000) {
 	    int tryRow = rand.nextInt(board.length);
 	    int tryCol = rand.nextInt(board[0].length);
 	    int tryDir = rand.nextInt(8);
 
 	    if (addWordTester(w,tryRow,tryCol,tryDir)) {
 		addWordHelper(w,tryRow,tryCol,tryDir);
-		failure = false;
+		break;
 	    }
 	}
+	
+	return failures < 1000;
     }
 	
     public void fillBoard(){
