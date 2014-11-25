@@ -1,4 +1,7 @@
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
 
 public class WordSearch {
     
@@ -22,6 +25,7 @@ public class WordSearch {
     
     //===========================================================================================================================================================================
 
+
     //CONSTRUCTORS
     public WordSearch(int r, int c){
 	rand = new Random();
@@ -44,9 +48,9 @@ public class WordSearch {
 	String s = "";
 	for (int i = 0; i < board.length; i++) {
 	    for (int j = 0; j < board[i].length; j++) {
-		s = s + board[i][j];
+		s = s + board[i][j] + " ";
 	    }
-	    s = s + "\n";
+	    s = s + "\n\n";
 	}
 	return s;
     }
@@ -85,9 +89,9 @@ public class WordSearch {
     public boolean addWord(String w){
 	int failures = 0;
 	
-	while (failures < 1000) {
-	    int tryRow = rand.nextInt(board.length);
-	    int tryCol = rand.nextInt(board[0].length);
+	while (failures < /*board.length*board[0].length*/ 8000) {
+	    int tryRow = rand.nextInt(board.length - 2 * w.length()) + w.length();
+	    int tryCol = rand.nextInt(board[0].length - 2 * w.length()) + w.length();
 	    int tryDir = rand.nextInt(8);
 
 	    if (addWordTester(w,tryRow,tryCol,tryDir)) {
@@ -98,6 +102,17 @@ public class WordSearch {
 	
 	return failures < 1000;
     }
+
+    public ArrayList<String> addWords(ArrayList<String> wordList){
+	for (int i = 0; i<wordList.size(); i++){
+	    if(! addWord(wordList.get(i))){
+		wordList.remove(i);
+		i--;
+	    }
+	}
+	return wordList;
+    }
+		
 	
     public void fillBoard(){
 	for(int i=0;i<board.length;i++){
@@ -113,12 +128,53 @@ public class WordSearch {
 
     //MAIN METHOD
     public static void main(String[] args) {
-	WordSearch w = new WordSearch();
+	ArrayList<String> words = new ArrayList<String>();
 	
+	boolean readfile = false;
+	Scanner sc = null;
+
+	if (args.length > 0) {
+	    try {
+		sc =new Scanner(new File(args[0]));
+		readfile = true;
+	    }catch (Exception e) {
+		System.out.println("File not found");
+		readfile = false;
+	    }
+	}
+	if (readfile) {
+	    
+	    while (sc.hasNext()) {
+		words.add(sc.nextLine());
+
+	    }
+	} else {
+	    words.add("alpha");
+	    words.add("bravo");
+	    words.add("charlie");
+	    words.add("delta");
+	    words.add("echo");
+	    words.add("foxtrot");
+	    words.add("golf");
+	    words.add("hotel");
+	    words.add("india");
+	    words.add("juliet");
+	    words.add("kilo");
+	    words.add("lima");
+	    words.add("mike");
+	}
+	
+	//System.out.println(words);
+	
+	WordSearch w = new WordSearch();
+	System.out.println();
+
+	/*
 	System.out.println(w);
 	
 	w.addWord("hello"); // should work
 	System.out.println(w);
+
 	
 	//w.addWord("look",3,14,0); // test illegal overlap
 	//w.addWord("look",3,18,0); // test legal overlap
@@ -128,7 +184,13 @@ public class WordSearch {
 	w.addWord("look"); //test vertical placement
 	w.addWord("alphabet");//testing vertical placement
 	System.out.println(w);
-	
+	*/
+	System.out.println("Word Bank");
+	System.out.println(w.addWords(words));
+	System.out.println();
+
+	//System.out.println(w);
+
 	w.fillBoard();
 	System.out.println(w);
     }
