@@ -1,40 +1,35 @@
-public class OSArray extends SuperArray{
+import java.util.*;
+import java.io.*;
+
+public class OSArray<Type extends Object & Comparable> extends GenericSuperArray<Type>{
 
     public OSArray() {
 	super();
     }
 
-    public String toString(){
-	String buffer = "";
-	for (int i = 0; i < last; i++) {
-	    buffer += data[i]+ ", ";
-	}
-	return buffer;
-    }
-
-    public boolean add(String str){
+    public boolean add(Type val){
 	int i = 0;
 	while(i < last) {
-	    if(str.compareTo(data[i]) <= 0){
-		super.add(i, str);
+	    if(data[i].compareTo(val) > 0){
+		super.add(i, val);
 		break;
 	    }
 	    i++;
 	}
 	
 	if (i == last) {
-	    super.add(str);
+	    super.add(val);
 	}
 	return true;
     }
     
-    public void add(int index, String i) {
+    public void add(int index, Type i) {
 	this.add(i);
     }
 
-    public String set(int index, String i) {
+    public Type set(int index, Type i) {
 	if (index < last && index >= 0) {
-	    String buffer = data[index];
+	    Type buffer = data[index];
 	    remove(index);
 	    add(i);
 	    return buffer;

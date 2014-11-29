@@ -1,6 +1,6 @@
 public class Driver {
     public static void main(String[] args) {
-	OSArray alpha = new OSArray();
+	OSArray alpha = new OSArray<String>();
 	System.out.println(alpha);
 	
 	alpha.add("alpha");
