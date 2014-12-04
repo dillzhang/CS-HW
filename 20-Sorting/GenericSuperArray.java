@@ -112,13 +112,13 @@ public class GenericSuperArray<Type extends Object & Comparable> {
 	}
     }
     
-    // HOMEWORK 20 ISORT() ======================================================================================================================================================
+    // HOMEWORK 20A ISORT() =====================================================================================================================================================
 
     public void isort() {
 	//Insertion Sort - Splits into sorted and unsorted part of the array
 	//Moves one element at a time from the unsorted to the sorted array and places it in the proper spot
 	//O(n) = n^2
-
+	//Cost of running on N terms = (N^2 + N)/2 = N + (N - 1) + ... + 3 + 2 + 1
 	Type buffer;
 	for (int i = 1; i < last; i++) {
 	    buffer = data[i];
@@ -133,6 +133,46 @@ public class GenericSuperArray<Type extends Object & Comparable> {
 	}
     }
     
+    // HOMEWORK 20B ISORT() =====================================================================================================================================================
+
+    public void ssort() {
+	//Selection Sort - Finds the min of the array and moves it to the begining of the array
+	//Repeats this process for everything except the moved elements until end of the array
+	//O(n) = n^2
+	//Cost of running on N terms = (N^2 + N)/2 = N + (N - 1) + ... + 3 + 2 + 1
+	Type buffer;
+	for (int i = 0; i < last; i++) {
+	    
+	    buffer = data[i];
+	    int minsofar = i;
+	    
+	    for (int j = i; j < last; j++) {
+		if (data[j].compareTo(data[minsofar]) < 0) {
+		    minsofar = j;
+		}
+	    }
+	    
+	    data[i] = data[minsofar];
+	    data[minsofar] = buffer;
+	}
+    }
+
+    public void bsort() {
+	//Bubble Sort - Compares two elements in the array, if out of order, swap, if not, leave alone
+	//Repeats this process down the array until the sorted part of the array
+	//O(n) = n^2
+	//Cost of running on N terms = (N^2 + N)/2 = N + (N - 1) + ... + 3 + 2 + 1
+	for (int i = last - 1; 0 < i; i--) {
+	    for (int j = 0; j < i; j++) {
+		if (data[j].compareTo(data[j+1]) > 0) {
+		    Type buffer = data[j+1];
+		    data[j+1] = data[j];
+		    data[j] = buffer;
+		}
+	    }
+	}
+    }
+
     // MERGE SORT ===============================================================================================================================================================
     
     public Type[] msorting(Type[] arrayer) {
@@ -248,7 +288,9 @@ public class GenericSuperArray<Type extends Object & Comparable> {
 	}
 	
 	System.out.println(alpha);
-	alpha.isort();
+	//alpha.isort();
+	//alpha.ssort();
+	alpha.bsort();
 	//alpha.msort();
 	System.out.println(alpha);
     }
