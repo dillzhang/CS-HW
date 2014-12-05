@@ -269,7 +269,21 @@ public class GenericSuperArray<Type extends Object & Comparable> {
 	    data[i] = buffer[i];
 	}
     }
-
+    
+    // QUICK SORT ==============================================================================================================================================================
+    
+/*
+    public void qsorting(Array arrayer, int laster) {
+	Type[] alpha = (Type[])(new Object[array.length/2]), beta = (Type[])(new Object[array.length/2]);
+	int alast = 0, blast = 0;
+	
+	for (int i = 0; i < laster; i++) {
+	    if (arrayer[i].compareTo(arrayer[laster]) < 0) {
+		alpha[alast] = arrayer[i];
+		alast += 1;
+	    } else if 
+    
+*/	    
     // MAIN METHOD ==============================================================================================================================================================
 
     public static void main(String[] args) {
