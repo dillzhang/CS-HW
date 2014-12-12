@@ -40,7 +40,7 @@ public class Searching {
     public Comparable isearch(Comparable item) {
         for(int counter = 0; counter<a.length; counter++) {
             if (a[counter].equals(item)) {
-                return counter;
+                return a[counter];
             }
         }
         return null;
@@ -54,7 +54,7 @@ public class Searching {
 	    int middle = (start + stop) / 2;
  
             if (a[middle].equals(item)){
-                return middle;
+                return a[middle];
             } else if (a[middle].compareTo(item) < 0) {
                 start = middle + 1;
             } else {
@@ -66,7 +66,7 @@ public class Searching {
     }
 
     public Comparable rbsearch(Comparable item) {
-	return rbsearch(item, 0, a.length-1);
+	return a[rbsearch(item, 0, a.length-1)];
     }
 
     public Comparable rbsearch(Comparable item, int start, int stop) {
