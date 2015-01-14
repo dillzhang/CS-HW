@@ -1,0 +1,60 @@
+https://github.com/zafirhsn/apfinal
+
+Browser.java
+-Errors
+	Line 22: <identifier> expected
+	Line 24: expected ";"
+	Line 24: not a statement
+	Line 24: expected ";"
+	Line 22: cannot find symbol (Title)
+	Line 24: Title is already defined
+	Line 24: Incompatible Types
+	Line 27: cannot find symbol (Title)
+	Line 38: cannot find symbol (Title)
+	Line 38: cannot find symbol (Title)
+
+-Process
+	readFile()
+ 	-Reads in a text file (assumingly HTML)
+	-Assigns each line to the an index in an arraylist
+	
+	search()
+	-Checks index's first character to be "<"
+	       if YES: check if equal to a html tag
+	       	  if YES: run tag function
+	
+-Comments
+	Contains compiling errors, therefore cannot be run for testing
+	What is the need for ArrayList tags? (Line 6)
+	What if someone has tags and text on a line? (Line 31 - 54)
+	     i.e. <i> Hello <i>
+	String Title = "Default" (Line 22)?
+
+Driver.java
+-Errors
+	N/A from compiler
+
+-Process
+	Makes new broswer
+	Prints the result of brower's readFile method
+	Uses the brower's search method
+	Prints the brower 
+
+-Comments
+	Testing purposes?
+	Why print browser if theres is no toString()? Looking for the memory address?
+	
+
+Gui.java
+-Errors
+	N/A from compiler
+
+-Process
+	Creates visual of the brower using swing and awt for the gui
+
+-Comments
+	Another main method? Have one in driver.java already
+	Not really familar with GUI, Sorry not certain if code is proper
+	
+
+Code Review by Dillon Zhang
